@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Button = styled.button`
   background-color: #44c767;
@@ -13,12 +13,12 @@ const Button = styled.button`
 
   &:active {
     position: relative;
-	  top: 1px;
+    top: 1px;
   }
 
   &:hover {
     background-color: #5cbf2a;
   }
-`;
+`
 
-export default  Button
+export default Button
