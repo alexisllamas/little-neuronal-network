@@ -58,7 +58,7 @@ function Four() {
 
   const trainInfinite = async () => {
     while (true) {
-      await sleep(100)
+      await sleep(1)
       trainNetworkTimes(100)
     }
   }
