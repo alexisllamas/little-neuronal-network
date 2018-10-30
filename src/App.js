@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from 'react'
+import { Router, Redirect } from "@reach/router"
 
-class App extends Component {
-  render() {
+import './App.scss'
+
+const One = lazy(() => import('./episodes/One'))
+const Two = lazy(() => import('./episodes/Two'))
+const Three = lazy(() => import('./episodes/Three'))
+const Four = lazy(() => import('./episodes/Four'))
+
+function App() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="container">
+          <h1>Alexis' super duper neuronal network</h1>
+          <Suspense fallback={<div>Loading...</div>} wait={5000}>
+            <Router>
+              <Redirect
+                from="/"
+                to="one"
+                noThrow
+              />
+              <One path="/one" />
+              <Two path="/two" />
+              <Three path="/three" />
+              <Four path="/four" />
+            </Router>
+          </Suspense>
+        </div>
       </div>
-    );
-  }
+    )
 }
 
-export default App;
+export default App
