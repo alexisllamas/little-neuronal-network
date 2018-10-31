@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Alexis' super duper neural network</h1>
+        <h1>Alexis' super duper mega awesome neural network</h1>
         <Suspense fallback={<div>Loading...</div>} wait={5000}>
           <Router>
             <Redirect from="/" to="one" noThrow />

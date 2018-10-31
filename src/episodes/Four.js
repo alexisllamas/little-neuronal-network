@@ -53,7 +53,7 @@ function Four() {
   const trainNetworkTimes = async times => {
     const iterator = Array.from({ length: times })
     for (const _ of iterator) {
-      await sleep(1)
+      // await sleep(1)
       trainNetwork()
     }
   }
